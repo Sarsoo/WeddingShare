@@ -113,6 +113,7 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
         <script src="~/js/popup.js" asp-append-version="true"></script>
         <script src="~/js/media-viewer.js" asp-append-version="true"></script>
+        <script defer src="https://u.sarsoo.xyz/sarsoo.js" data-website-id="c2db406d-67ec-4a91-8e7f-00c4e8c478b0"></script>
 
         @if (User?.Identity != null && User.Identity.IsAuthenticated)
         {
@@ -262,6 +263,18 @@
         
         <!-- JS -->
         @await RenderSectionAsync("Scripts", required: false)
+
+        <script type="text/javascript">
+          (() => {
+            const name = 'outbound-link-click';
+            document.querySelectorAll('a').forEach(a => {
+              if (a.host !== window.location.host && !a.getAttribute('data-umami-event')) {
+                a.setAttribute('data-umami-event', name);
+                a.setAttribute('data-umami-event-url', a.href);
+              }
+            });
+          })();
+        </script>
 
     </body>
 </html>
