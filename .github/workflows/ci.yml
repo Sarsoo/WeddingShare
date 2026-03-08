@@ -46,7 +46,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: sarsoo/weddingshare:latest,sarsoo/weddingshare:${{ github.ref_name }}
+          tags: sarsoo/weddingshare:latest
           file: WeddingShare/Dockerfile
           no-cache: true
           platforms: linux/amd64,linux/arm64
